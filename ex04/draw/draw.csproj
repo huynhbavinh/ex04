@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75A91EF2-774D-4DA0-8D89-AC154C745BCC}</ProjectGuid>
+    <ProjectGuid>{805536CF-6BA7-42AC-94E5-387DA2AB9FEC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ex04</RootNamespace>
-    <AssemblyName>ex04</AssemblyName>
+    <RootNamespace>draw</RootNamespace>
+    <AssemblyName>draw</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

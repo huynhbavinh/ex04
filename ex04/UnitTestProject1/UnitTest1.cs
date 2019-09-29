@@ -32,5 +32,48 @@ namespace UnitTestProject1
             bool kq6 = Program.IsPrime(-1);
             Assert.AreEqual(false, kq1);
         }
+        [TestMethod]
+        public void testSquare()
+        {
+            int kq1 = Program.Square(-2);
+            Assert.AreEqual(4, kq1);
+            int kq2 = Program.Square(4);
+            Assert.AreEqual(16, kq2);
+        }
+        [TestMethod]
+        public void testPow()
+        {
+            int kq1 = Program.pow(2, 3);
+            Assert.AreEqual(8, kq1);
+            int kq2 = Program.pow(2, 0);
+            Assert.AreEqual(1, kq2);
+
+        }
+        [TestMethod]
+        public void testABS()
+        {
+            int kq1 = Program.abs(-4);
+            Assert.AreEqual(4, kq1);
+            int kq2 = Program.abs(8);
+            Assert.AreEqual(8, kq2);
+            int kq3 = Program.abs(0);
+            Assert.AreEqual(1, kq3);
+        }
+        [TestMethod]
+        public void testCeil()
+        {
+            int kq1 = Program.mathceil(4.2);
+            Assert.AreEqual(5, kq1);
+            int kq2 = Program.mathceil(0);
+            Assert.AreEqual(0, kq2);
+            int kq3 = Program.mathceil(5);
+            Assert.AreEqual(5, kq3);
+        }
+        [TestMethod]
+        public void testFloor()
+        {
+            int kq1 = Program.mathFloor(4.4);
+            Assert.AreEqual(4, kq1);
+        }
     }
 }
