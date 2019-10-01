@@ -57,7 +57,6 @@ namespace ex4b
         public static bool problem2(int[] array)
         {
             int key1 = 5;
-            int key2 = 6;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] == key1 || array[i] == 6)
