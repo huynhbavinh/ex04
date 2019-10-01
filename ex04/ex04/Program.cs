@@ -26,6 +26,7 @@ namespace ex04
             Console.WriteLine("{0} is floor {1} ", mathFloor(number3), number3);
             Console.WriteLine("{0} is lucky number ", Random(number));
             Console.WriteLine("{0} is random2 ", random2());
+            //long x = Convert.ToInt32(Console.ReadLine());
         }
         public static bool IsOdd(int number)
         {
@@ -115,27 +116,49 @@ namespace ex04
             }
             return number;
         }
-        public static int mathceil (double number3)
+        public static int mathceil(double number3)
         {
-            if (number3 % 1 != 0)
+            if (number3 > 0 && number3 % 1 != 0)
             {
                 return (int)number3 + 1;
             }
-            return (int)number3;
+            else if (number3 < 0 && number3 % 1 != 0)
+            {
+                return (int)number3;
+            }
+            else
+            {
+                return (int)number3;
+            }
+
         }
         public static int mathFloor(double number3)
         {
+            if (number3 < 0)
+            {
+                return (int)number3 + -1;
+            }
+
             return (int)number3;
         }
         public static int Random(int number)
         {
             Random rd = new Random();
-          return  number = rd.Next(0, 100000);
+            return number = rd.Next(0, 100000);
         }
         public static float random2()
         {
             Random rd2 = new Random();
-            return rd2.Next(0, 1);           
+            return rd2.Next(0, 1);
+        }
+        public static long factonrial(long x)
+        {
+            int result = 1;
+            for (int i = 1; i <= x; i++)
+            {
+                result = result * i;
+            }
+            return result;
         }
     }
 }

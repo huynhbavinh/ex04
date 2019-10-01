@@ -62,18 +62,34 @@ namespace UnitTestProject1
         [TestMethod]
         public void testCeil()
         {
-            int kq1 = Program.mathceil(4.2);
+            int kq1 = Program.mathceil((float)4.2);
             Assert.AreEqual(5, kq1);
             int kq2 = Program.mathceil(0);
             Assert.AreEqual(0, kq2);
             int kq3 = Program.mathceil(5);
             Assert.AreEqual(5, kq3);
+            int kq4 = Program.mathceil((float)-2.3);
+            Assert.AreEqual(-2,kq4);
+            int kq5 = Program.mathceil((float)0.1);
+            Assert.AreEqual(1, kq5);
         }
         [TestMethod]
         public void testFloor()
         {
             int kq1 = Program.mathFloor(4.4);
             Assert.AreEqual(4, kq1);
+            int kq2 = Program.mathFloor(-2.3);
+            Assert.AreEqual(-3, kq2);
+            int kq3 = Program.mathFloor(0);
+            Assert.AreEqual(0, kq3);
+            int kq4 = Program.mathFloor(0.1);
+            Assert.AreEqual(0, kq4);
+        }
+        [TestMethod]
+        public void testfactorial()
+        {
+            long kq1 = Program.factonrial(4);
+            Assert.AreEqual(24,kq1);
         }
     }
 }
