@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ex4b
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -15,7 +15,7 @@ namespace ex4b
             Console.WriteLine("nhap phan tu mang : ");
             for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine("array{0}", i);
+                Console.Write("array[{0}] = ", i);
                 array[i] = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine("Array Created : ");
@@ -57,15 +57,17 @@ namespace ex4b
         public static bool problem2(int[] array)
         {
             int key1 = 5;
+            int key2 = 6;
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] == key1 || array[i] == 6)
+                if (array[i] == key1 || array[i] == key2)
                 {
                     return true;
                 }
             }
             return false;
         }
+
         public static void check2(int[] array)
         {
             problem2(array);
@@ -91,10 +93,21 @@ namespace ex4b
                 return false;
             }
         }
+        public static bool prob2b(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == 6)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public static void check3(int[] array)
         {
             problem3(array);
-            if (problem3(array) == true)
+            if (problem3(array) == true && prob2b(array) == true)
             {
                 Console.WriteLine("have the number key1 and key2");
             }
@@ -130,7 +143,7 @@ namespace ex4b
             }
             return count;
         }
-        public static int sum(int [] array)
+        public static int sum(int[] array)
         {
             int sum = 0;
             for (int i = 0; i < array.Length; i++)
