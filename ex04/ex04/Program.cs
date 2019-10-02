@@ -94,12 +94,26 @@ namespace ex04
         {
             return number * number * number;
         }
-        public static int pow(int number, int number2)
+        public static double pow(int number, int number2)
         {
-            int result = 1;
-            for (int i = 0; i < number2; i++)
+            double result = 1;
+            if (number2 > 0)
             {
-                result = result * number;
+
+                for (int i = 0; i < number2; i++)
+                {
+                    result = result * number;
+                }
+            }
+            else if (number2 < 0)
+            {
+                double temp;
+                for (int i = 0; i < Math.Abs(number2); i++)
+                {
+                    result = (result * number);
+                }
+                temp = 1 / result;
+                result = temp;
             }
             return result;
         }

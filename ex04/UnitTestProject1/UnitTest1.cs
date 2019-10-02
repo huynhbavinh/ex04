@@ -43,11 +43,10 @@ namespace UnitTestProject1
         [TestMethod]
         public void testPow()
         {
-            int kq1 = Program.pow(2, 3);
+            double kq1 = Program.pow(2, 3);
             Assert.AreEqual(8, kq1);
-            int kq2 = Program.pow(2, 0);
+            double kq2 = Program.pow(2, 0);
             Assert.AreEqual(1, kq2);
-
         }
         [TestMethod]
         public void testABS()
