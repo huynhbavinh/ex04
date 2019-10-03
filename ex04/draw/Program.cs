@@ -20,6 +20,15 @@ namespace draw
             draw4(number, 'x');
             Console.WriteLine();
             draw5(number, '+');
+            Console.WriteLine();
+            draw6(number, 'v');
+            Console.WriteLine();
+            draw7(number, 'V');
+            Console.WriteLine();
+            draw8(number, '^');
+            Console.WriteLine();
+            draw9(number, 'A');
+
         }
         public static void line(int number, char c)
         {
@@ -141,11 +150,97 @@ namespace draw
                 Hori(number / 2, ' '); Hori(1, c); Console.WriteLine();
             }
             //middle
-            Hori(number, c); Console.WriteLine();
+            Hori(number +1, c); Console.WriteLine();
             //bot-mid
             for (int i = 0; i < number / 2; i++)
             {
                 Hori(number / 2, ' '); Hori(1, c); Console.WriteLine();
+            }
+        }
+        public static void draw6(int number, char c)
+        {
+            //i-th line
+            //idea : mid-space decrease 2 element any single line 
+            //at : line 2 : mid-space  got 12 ( at number=8)
+            // line 3 got : got 10
+            // so : we got Space = number(8) + (8)/2 + 1 at first loop
+            // mid-space of line2 = Space - 2 because its decrease 2 element any single line 
+            int space = number + 1;
+            for (int i = number - 1; i > 1; i--)
+            {
+                Hori(number - i, ' '); Hori(1, c);
+                space = space - 2;
+                Hori(space, ' '); Hori(1, c); Console.WriteLine();
+            }
+            //last line
+            Hori(number - 1, ' '); Hori(1, c); Console.WriteLine();
+        }
+        static void draw7(int number, char c)
+        {
+            Hori(number * 2 - 1, c); Console.WriteLine();
+            //i-th line
+            //idea : mid-space decrease 2 element any single line 
+            //at : line 2 : mid-space  got 12 ( at number=8)
+            // line 3 got : got 10
+            // so : we got Space = number(8) + (8)/2 + 1 at first loop
+            // mid-space of line2 = Space - 2 because its decrease 2 element any single line 
+            int space = number + 1;
+            for (int i = number - 1; i > 1; i--)
+            {
+                Hori(number - i, ' '); Hori(1, c);
+                space = space - 2;
+                Hori(space, ' '); Hori(1, c); Console.WriteLine();
+            }
+            //last line
+            Hori(number - 1, ' '); Hori(1, c); Console.WriteLine();
+        }
+        static void draw8(int number, char c)
+        {
+            // line 1 : n-1 space / 1 star
+            // line 2 : n-2 space/ 1 star, 1 space/1 star
+            // line 3 : n-3 space/ 1 star, 3 space/1 star
+            // last line 2n-1 star 
+            {
+                //first line
+                Hori(number - 1, ' '); Hori(1, c); Console.WriteLine();
+                // i-th line           
+                int line = 1, space = number + 1;
+                for (int i = 1; i < number; i++)
+                {
+                    line = line + 1;
+                    Hori(number - line, ' '); Hori(1, c);
+                    // we got space = number+1 - 2, because Value (number - space) must grow 2 time/ 1 it's only a oDD 
+                    space = space - 2;
+                    Hori(number - space, ' '); Hori(1, c); Console.WriteLine();
+                }
+                // last line
+                Hori(number * 2 - 1, c);
+            }
+        }
+        static void draw9(int number, char c)
+        {
+            // line 1 : n-1 space / 1 star
+            // line 2 : n-2 space/ 1 star, 1 space/1 star
+            // line 3 : n-3 space/ 1 star, 3 space/1 star
+            // last line 2n-1 star 
+            {
+                //first line
+                Hori(number - 1, ' '); Hori(1, c); Console.WriteLine();
+                // i-th line           
+                int line = 1, space = number + 1;
+                for (int i = 1; i < number; i++)
+                {
+                    line = line + 1;
+                    Hori(number - line, ' '); Hori(1, c);
+                    // we got space = number+1 - 2, because Value (number - space) must grow 2 time/ 1 it's only a oDD 
+                    space = space - 2;
+                    Hori(number - space, ' '); Hori(1, c); Console.WriteLine();
+                    if (i == number / 2 )
+                    {
+                        //middle line
+                        Hori( space - 1,' '); Hori(number*2 - 2, c); Console.WriteLine();
+                    }
+                }
             }
         }
     }
