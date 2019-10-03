@@ -10,24 +10,24 @@ namespace draw
     {
         static void Main(string[] args)
         {
-            int number = Convert.ToInt32(Console.ReadLine());
-            draw1(number, 'o');
+            //int number = Convert.ToInt32(Console.ReadLine());
+            draw1(4, 'o');
             Console.WriteLine();
-            draw2(number, 'u');
+            draw2(4, 'u');
             Console.WriteLine();
-            draw3(number, 'v');
+            draw3(4, 'v');
             Console.WriteLine();
-            draw4(number, 'x');
+            draw4(4, 'x');
             Console.WriteLine();
-            draw5(number, '+');
+            draw5(4, '+');
             Console.WriteLine();
-            draw6(number, 'v');
+            draw6(4, 'v');
             Console.WriteLine();
-            draw7(number, 'V');
+            draw7(4, 'V');
             Console.WriteLine();
-            draw8(number, '^');
+            draw8(4, '^');
             Console.WriteLine();
-            draw9(number, 'A');
+            draw9(4, 'A');
 
         }
         public static void line(int number, char c)
@@ -150,7 +150,7 @@ namespace draw
                 Hori(number / 2, ' '); Hori(1, c); Console.WriteLine();
             }
             //middle
-            Hori(number +1, c); Console.WriteLine();
+            Hori(number + 1, c); Console.WriteLine();
             //bot-mid
             for (int i = 0; i < number / 2; i++)
             {
@@ -228,19 +228,24 @@ namespace draw
                 Hori(number - 1, ' '); Hori(1, c); Console.WriteLine();
                 // i-th line           
                 int line = 1, space = number + 1;
-                for (int i = 1; i < number; i++)
+                for (int i = 1; i < number / 2; i++)
                 {
                     line = line + 1;
                     Hori(number - line, ' '); Hori(1, c);
                     // we got space = number+1 - 2, because Value (number - space) must grow 2 time/ 1 it's only a oDD 
                     space = space - 2;
                     Hori(number - space, ' '); Hori(1, c); Console.WriteLine();
-                    if (i == number / 2 )
-                    {
-                        //middle line
-                        Hori( space - 1,' '); Hori(number*2 - 2, c); Console.WriteLine();
-                    }
                 }
+                for (int i = 1; i < number/2; i++)
+                {
+                    int temp = number / 2;
+                    if (i == 1)
+                    {
+                        Hori(temp - i, ' '); Hori(number + 1, 'A'); Console.WriteLine();
+                    }
+                    Hori(1, c); Hori(number + 1, ' '); Hori(1, c); ; Console.WriteLine();
+                }
+               
             }
         }
     }
